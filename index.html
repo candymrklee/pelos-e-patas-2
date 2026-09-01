@@ -119,16 +119,16 @@
       font-size: 16px;
     }
 
-    /* HERO SECTION */
+    /* HERO SECTION CORRIGIDA */
     .hero {
       background: linear-gradient(180deg, #ffd8c0 0%, #ffaa7d 100%);
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end; /* Garante alinhamento na base */
       height: 380px;
       padding: 0 40px;
-      overflow: visible;
+      overflow: hidden; /* Corta qualquer sobra para não vazar a borda */
     }
 
     .hero-container {
@@ -172,20 +172,21 @@
       background-color: var(--azul-escuro);
     }
 
-    /* POSICIONAMENTO DA NOVA IMAGEM */
+    /* POSICIONAMENTO EXATO DA IMAGEM RENITE À BASE */
     .hero-image {
       position: absolute;
-      right: -10px;
-      bottom: -15px;
-      z-index: 10;
-      pointer-events: none;
+      right: 0;
+      bottom: 0; /* Cola a imagem no limite inferior */
+      display: flex;
+      align-items: flex-end;
     }
 
     .hero-image img {
-      height: 410px;
+      height: 360px; /* Ajustado para caber perfeitamente no container de 380px */
       width: auto;
-      display: block;
+      display: block; /* Elimina o espaçamento inline inferior */
       object-fit: contain;
+      vertical-align: bottom;
     }
 
     /* CATALOGO DE PRODUTOS */
@@ -336,7 +337,7 @@
         right: 0;
       }
       .hero-image img {
-        height: 300px;
+        height: 280px;
       }
       .produtos {
         grid-template-columns: 1fr;
@@ -372,7 +373,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION COM A NOVA IMAGEM -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-text">
@@ -380,9 +381,9 @@
         <button class="btn-agende">Agende Agora</button>
       </div>
 
-      <!-- IMAGEM DA MULHER COM O CACHORRO (?v=1 FORÇA A LIMPEZA DO CACHE NA VERCEL) -->
+      <!-- IMAGEM DA MULHER ALINHADA NA BASE -->
       <div class="hero-image">
-        <img src="assets/mulher.png?v=1" alt="Mulher com cachorro no colo">
+        <img src="assets/mulher.png?v=2" alt="Mulher com cachorro no colo">
       </div>
     </div>
   </section>
