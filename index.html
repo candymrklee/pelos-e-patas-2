@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pelos e Patas</title>
-
+  <title>Pelos e Patas - Pet Shop</title>
   <style>
     :root {
       --laranja: #fb6d0d;
@@ -23,14 +22,164 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: var(--cinza-claro);
       color: var(--azul-escuro);
-      padding: 40px 24px;
     }
 
+    /* BARRA SUPERIOR (AZUL) */
+    .top-bar {
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--branco);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--laranja);
+    }
+
+    /* BARRA DE PESQUISA */
+    .search-box {
+      background: var(--branco);
+      border-radius: 25px;
+      padding: 4px 6px 4px 18px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 13px;
+      color: var(--cinza-texto);
+    }
+
+    .search-box button {
+      background: var(--laranja);
+      color: var(--branco);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .cart-badge {
+      background: var(--laranja);
+      color: var(--branco);
+      border-radius: 50%;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    /* MENU DE NAVEGAÇÃO SECUNDÁRIO */
+    .sub-nav {
+      background: var(--branco);
+      display: flex;
+      justify-content: space-around;
+      padding: 14px 40px;
+      border-bottom: 2px solid var(--laranja);
+    }
+
+    .sub-nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* HERO SECTION (GRADIENTE + CACHORRO) */
+    .hero {
+      background: linear-gradient(180deg, #ffd8c0 0%, #ffaa7d 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 380px;
+      padding: 20px 40px 0;
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      max-width: 550px;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'Georgia', serif;
+      font-size: 42px;
+      color: #1a1a1a;
+      font-weight: normal;
+      line-height: 1.3;
+      margin-bottom: 30px;
+    }
+
+    .btn-agende {
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 14px 48px;
+      border: none;
+      border-radius: 30px;
+      font-size: 22px;
+      font-family: 'Georgia', serif;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+    }
+
+    .btn-agende:hover {
+      background-color: var(--azul-escuro);
+    }
+
+    .hero-image {
+      align-self: flex-end;
+      margin-bottom: -10px;
+    }
+
+    .hero-image img {
+      max-height: 360px;
+      display: block;
+    }
+
+    /* CATALOGO DE PRODUTOS */
     .catalogo {
       max-width: 1180px;
-      margin: 0 auto;
+      margin: 40px auto;
+      padding: 0 24px;
     }
 
     .cabecalho {
@@ -47,15 +196,9 @@
       border-radius: 2px;
     }
 
-    .cabecalho h1 {
+    .cabecalho h2 {
       font-size: 28px;
       color: var(--azul-escuro);
-    }
-
-    .cabecalho p {
-      margin-left: auto;
-      color: var(--cinza-texto);
-      font-size: 14px;
     }
 
     .produtos {
@@ -71,6 +214,8 @@
       border-radius: 24px;
       box-shadow: 0 8px 24px rgba(2, 85, 144, 0.12);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
@@ -92,24 +237,28 @@
     }
 
     .imagem-produto {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 220px;
       margin: 22px 24px 0;
       background: #e8e8e8;
       border-radius: 24px;
       overflow: hidden;
+      padding: 16px;
     }
 
     .imagem-produto img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
+      object-fit: contain;
     }
 
     .conteudo {
       padding: 22px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .categoria {
@@ -144,7 +293,7 @@
 
     .comprar {
       width: 100%;
-      margin-top: 20px;
+      margin-top: auto;
       padding: 12px;
       border: none;
       border-radius: 8px;
@@ -153,103 +302,128 @@
       font-size: 15px;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.2s ease;
     }
 
-    .comprar:hover {
-      background: var(--azul-escuro);
+    footer {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 24px;
+      margin-top: 60px;
+      font-size: 14px;
     }
 
     @media (max-width: 800px) {
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
       .produtos {
         grid-template-columns: 1fr;
-        max-width: 420px;
-        margin: 0 auto;
-      }
-
-      .cabecalho {
-        flex-wrap: wrap;
-      }
-
-      .cabecalho p {
-        width: 100%;
-        margin-left: 22px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER COMPLETO -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">pelos<span>&</span>patas</div>
+      
+      <div class="search-box">
+        <input type="text" placeholder="O que seu pet precisa hoje? (ex: Ração Cães, Antipulgas...)">
+        <button>Buscar</button>
+      </div>
+
+      <div class="user-actions">
+        <span>👤 Olá, Entrar</span>
+        <span>🛒 Carrinho <span class="cart-badge">3</span></span>
+      </div>
+    </div>
+
+    <nav class="sub-nav">
+      <a href="#">Cães</a>
+      <a href="#">Gatos</a>
+      <a href="#">Outros Pets</a>
+      <a href="#">Serviços</a>
+      <a href="quem-somos.html">Quem Somos?</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION COM CACHORRO -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Cuidamos do seu Pet com amor, respeito e bem-estar</h1>
+        <button class="btn-agende">Agende Agora</button>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/cachorro.png" alt="Cachorro acenando com a pata">
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOGO DE PRODUTOS -->
   <main class="catalogo">
-    <header class="cabecalho">
+    <div class="cabecalho">
       <span class="marca"></span>
-      <h1>Ofertas para seu pet</h1>
-      <p>Pelos e Patas</p>
-    </header>
+      <h2>Itens Para Cães</h2>
+    </div>
 
     <section class="produtos">
-
+      <!-- CARD 1 -->
       <article class="card">
         <span class="desconto">10%</span>
-
         <div class="imagem-produto">
-          <img src="assets/petisco.png" alt="Petisco Natural para Cães">
+          <img src="assets/petisco.png" alt="Petisco Natural">
         </div>
-
         <div class="conteudo">
           <p class="categoria">Petiscos</p>
-          <h2 class="produto-nome">
-            Petisco Natural para Cães — Pele e Pelo 65 g
-          </h2>
-
+          <h3 class="produto-nome">Petisco para Cães Origem Natural - Pele e Pelo 65 g</h3>
           <p class="preco-antigo">R$ 8,49</p>
           <p class="preco-atual">R$ 7,64</p>
-
           <button class="comprar">Comprar agora</button>
         </div>
       </article>
 
+      <!-- CARD 2 -->
       <article class="card">
         <span class="desconto">10%</span>
-
         <div class="imagem-produto">
-          <img src="assets/casinha.png" alt="Cama Caminha para Pet">
+          <img src="assets/casinha.png" alt="Kit Cama Caminha">
         </div>
-
         <div class="conteudo">
           <p class="categoria">Conforto</p>
-          <h2 class="produto-nome">
-            Kit Cama Caminha com 4 Peças para Pet — Tamanho G
-          </h2>
-
+          <h3 class="produto-nome">Kit Cama Caminha 4 Peças Para Pet Cachorro - Tamanho G</h3>
           <p class="preco-antigo">R$ 189,91</p>
           <p class="preco-atual">R$ 170,91</p>
-
           <button class="comprar">Comprar agora</button>
         </div>
       </article>
 
+      <!-- CARD 3 -->
       <article class="card">
         <span class="desconto">10%</span>
-
         <div class="imagem-produto">
-          <img src="assets/roupa.png" alt="Roupa para Cachorro Moletom">
+          <img src="assets/roupa.png" alt="Roupa Moletom">
         </div>
-
         <div class="conteudo">
           <p class="categoria">Roupinhas</p>
-          <h2 class="produto-nome">
-            Roupa para Cachorro Moletom Pet Flanelado com Capuz
-          </h2>
-
+          <h3 class="produto-nome">Roupa Para Cachorro Moletom Pet Flanelado com Capuz</h3>
           <p class="preco-antigo">R$ 44,99</p>
           <p class="preco-atual">R$ 40,90</p>
-
           <button class="comprar">Comprar agora</button>
         </div>
       </article>
-
     </section>
   </main>
+
+  <footer>
+    <p>&copy; Pelos e Patas - Todos os direitos reservados.</p>
+  </footer>
+
 </body>
 </html>
