@@ -92,15 +92,20 @@
     }
 
     .imagem-produto {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
       height: 220px;
       margin: 22px 24px 0;
       background: #e8e8e8;
       border-radius: 24px;
-      color: var(--azul);
-      font-size: 72px;
+      overflow: hidden;
+    }
+
+    .imagem-produto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .conteudo {
@@ -187,21 +192,9 @@
       <article class="card">
         <span class="desconto">10%</span>
 
-       <div class="imagem-produto">
-  <img 
-    src="assets/petisco.png" 
-
-  style="
-  width: 100%;
-  height: 220px;
-  background-color: #eeeeee;
-  border-radius: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-">
-</div>
+        <div class="imagem-produto">
+          <img src="assets/petisco.png" alt="Petisco Natural para Cães">
+        </div>
 
         <div class="conteudo">
           <p class="categoria">Petiscos</p>
@@ -220,20 +213,8 @@
         <span class="desconto">10%</span>
 
         <div class="imagem-produto">
-  <img 
-    src="assets/casinha.png" 
-
-  style="
-  width: 100%;
-  height: 220px;
-  background-color: #eeeeee;
-  border-radius: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-">
-</div>
+          <img src="assets/casinha.png" alt="Cama Caminha para Pet">
+        </div>
 
         <div class="conteudo">
           <p class="categoria">Conforto</p>
@@ -251,21 +232,9 @@
       <article class="card">
         <span class="desconto">10%</span>
 
-       <div class="imagem-produto">
-  <img 
-    src="assets/roupa.png" 
-
-  style="
-  width: 100%;
-  height: 220px;
-  background-color: #eeeeee;
-  border-radius: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-">
-</div>
+        <div class="imagem-produto">
+          <img src="assets/roupa.png" alt="Roupa para Cachorro Moletom">
+        </div>
 
         <div class="conteudo">
           <p class="categoria">Roupinhas</p>
