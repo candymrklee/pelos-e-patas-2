@@ -119,14 +119,14 @@
       font-size: 16px;
     }
 
-    /* HERO SECTION (MANTÉM O ALTURA DO BANNER) */
+    /* HERO SECTION */
     .hero {
       background: linear-gradient(180deg, #ffd8c0 0%, #ffaa7d 100%);
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 420px;
+      height: 380px;
       padding: 0 40px;
       overflow: visible;
     }
@@ -172,17 +172,17 @@
       background-color: var(--azul-escuro);
     }
 
-    /* CACHORRO MUITO MAIOR COM SOBREPOSIÇÃO */
+    /* IMAGEM DA MULHER COM O CACHORRO */
     .hero-image {
       position: absolute;
-      right: -20px;
-      bottom: 0;
+      right: -10px;
+      bottom: -15px;
       z-index: 10;
       pointer-events: none;
     }
 
     .hero-image img {
-      height: 580px; /* Aumentado para o cão se destacar na tela */
+      height: 410px;
       width: auto;
       display: block;
       object-fit: contain;
@@ -336,7 +336,7 @@
         right: 0;
       }
       .hero-image img {
-        height: 350px;
+        height: 300px;
       }
       .produtos {
         grid-template-columns: 1fr;
@@ -372,7 +372,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION COM CACHORRO SOBREPOSTO -->
+  <!-- HERO SECTION COM A NOVA IMAGEM -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-text">
@@ -380,9 +380,9 @@
         <button class="btn-agende">Agende Agora</button>
       </div>
 
-      <!-- IMAGEM DO CACHORRO -->
+      <!-- NOVA IMAGEM ATUALIZADA -->
       <div class="hero-image">
-        <img src="assets/cachorro.png" alt="Cachorro acenando com a pata">
+        <img src="assets/mulher.png" alt="Mulher abraçando cachorro">
       </div>
     </div>
   </section>
