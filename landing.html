@@ -24,6 +24,7 @@
       font-family: Arial, sans-serif;
       background: var(--cinza-claro);
       color: var(--azul-escuro);
+      overflow-x: hidden;
     }
 
     /* BARRA SUPERIOR (AZUL) */
@@ -35,6 +36,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .logo {
@@ -105,6 +108,8 @@
       justify-content: space-around;
       padding: 14px 40px;
       border-bottom: 2px solid var(--laranja);
+      position: relative;
+      z-index: 1;
     }
 
     .sub-nav a {
@@ -114,16 +119,16 @@
       font-size: 16px;
     }
 
-    /* HERO SECTION (AJUSTADA PARA O CACHORRO GRANDE) */
+    /* HERO SECTION (MANTÉM O ALTURA DO BANNER) */
     .hero {
       background: linear-gradient(180deg, #ffd8c0 0%, #ffaa7d 100%);
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 380px;
+      height: 420px;
       padding: 0 40px;
-      overflow: visible; /* Permite a pata subir até o menu */
+      overflow: visible;
     }
 
     .hero-container {
@@ -167,16 +172,17 @@
       background-color: var(--azul-escuro);
     }
 
-    /* IMAGEM DO CACHORRO AUMENTADA E POSICIONADA */
+    /* CACHORRO MUITO MAIOR COM SOBREPOSIÇÃO */
     .hero-image {
       position: absolute;
-      right: 0;
-      bottom: -15px; /* Alinha bem o corte inferior */
+      right: -20px;
+      bottom: 0;
       z-index: 10;
+      pointer-events: none;
     }
 
     .hero-image img {
-      height: 480px; /* Aumentado para ocupar toda a altura e subir até o topo */
+      height: 580px; /* Aumentado para o cão se destacar na tela */
       width: auto;
       display: block;
       object-fit: contain;
@@ -320,16 +326,17 @@
       font-size: 14px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       .hero-container {
         flex-direction: column;
         text-align: center;
       }
       .hero-image {
         position: relative;
+        right: 0;
       }
       .hero-image img {
-        height: 300px;
+        height: 350px;
       }
       .produtos {
         grid-template-columns: 1fr;
@@ -365,7 +372,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION COM CACHORRO -->
+  <!-- HERO SECTION COM CACHORRO SOBREPOSTO -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-text">
