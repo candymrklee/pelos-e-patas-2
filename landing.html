@@ -114,39 +114,40 @@
       font-size: 16px;
     }
 
-    /* HERO SECTION (GRADIENTE + CACHORRO) */
+    /* HERO SECTION (AJUSTADA PARA O CACHORRO GRANDE) */
     .hero {
       background: linear-gradient(180deg, #ffd8c0 0%, #ffaa7d 100%);
       position: relative;
-      overflow: hidden;
       display: flex;
       justify-content: center;
-      align-items: flex-end; /* Alinha o cachorro exatamente no fundo */
-      min-height: 380px;
-      padding: 20px 40px 0;
+      align-items: center;
+      height: 380px;
+      padding: 0 40px;
+      overflow: visible; /* Permite a pata subir até o menu */
     }
 
     .hero-container {
       max-width: 1100px;
       width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
 
     .hero-text {
       max-width: 550px;
       text-align: center;
-      margin-bottom: 40px; /* Eleva o texto levemente em relação ao fundo */
     }
 
     .hero-text h1 {
       font-family: 'Georgia', serif;
-      font-size: 42px;
+      font-size: 44px;
       color: #1a1a1a;
       font-weight: normal;
       line-height: 1.3;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
 
     .btn-agende {
@@ -166,16 +167,19 @@
       background-color: var(--azul-escuro);
     }
 
-    /* POSICIONAMENTO DA IMAGEM DO CACHORRO */
+    /* IMAGEM DO CACHORRO AUMENTADA E POSICIONADA */
     .hero-image {
-      display: flex;
-      align-items: flex-end;
+      position: absolute;
+      right: 0;
+      bottom: -15px; /* Alinha bem o corte inferior */
+      z-index: 10;
     }
 
     .hero-image img {
-      height: 360px; /* Ajuste para o tamanho proporcional */
-      object-fit: contain;
+      height: 480px; /* Aumentado para ocupar toda a altura e subir até o topo */
+      width: auto;
       display: block;
+      object-fit: contain;
     }
 
     /* CATALOGO DE PRODUTOS */
@@ -321,6 +325,12 @@
         flex-direction: column;
         text-align: center;
       }
+      .hero-image {
+        position: relative;
+      }
+      .hero-image img {
+        height: 300px;
+      }
       .produtos {
         grid-template-columns: 1fr;
       }
@@ -363,7 +373,7 @@
         <button class="btn-agende">Agende Agora</button>
       </div>
 
-      <!-- IMAGEM DO CACHORRO EM ASSETS/CACHORRO.PNG -->
+      <!-- IMAGEM DO CACHORRO -->
       <div class="hero-image">
         <img src="assets/cachorro.png" alt="Cachorro acenando com a pata">
       </div>
