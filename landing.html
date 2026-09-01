@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelos e Patas - Pet Shop</title>
+  <style>
+    :root {
+      --laranja: #fb6d0d;
+      --azul: #025590;
+      --azul-escuro: #063b61;
+      --cinza-texto: #666;
+      --cinza-claro: #f4f6f8;
+      --branco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-border;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--cinza-claro);
+      color: var(--azul-escuro);
+    }
+
+    /* HEADER */
+    header {
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--branco);
+    }
+
+    .logo span {
+      color: var(--laranja);
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #ffe0cc 0%, #ffffff 100%);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: var(--azul-escuro);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--cinza-texto);
+      margin-bottom: 24px;
+    }
+
+    .btn-hero {
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 14px 32px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-hero:hover {
+      background-color: var(--azul-escuro);
+    }
+
+    /* CARDS SECTION */
+    .produtos {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .titulo-secao {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      font-size: 22px;
+    }
+
+    .barra-marca {
+      width: 6px;
+      height: 24px;
+      background-color: var(--azul);
+      border-radius: 2px;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 16px;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .desconto {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--laranja);
+      color: var(--branco);
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      z-index: 1;
+    }
+
+    .imagem-container {
+      height: 180px;
+      background-color: #eee;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      overflow: hidden;
+      padding: 12px;
+    }
+
+    .imagem-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-titulo {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: var(--azul-escuro);
+      flex-grow: 1;
+    }
+
+    .preco-antigo {
+      text-decoration: line-through;
+      color: var(--cinza-texto);
+      font-size: 14px;
+    }
+
+    .preco-atual {
+      font-size: 22px;
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 24px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">pelos<span>&</span>patas</div>
+    <nav>
+      <a href="#">Cães</a>
+      <a href="#">Gatos</a>
+      <a href="#">Serviços</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Cuidamos do seu Pet com amor, respeito e bem-estar</h1>
+      <p>As melhores ofertas em rações, brinquedos e acessórios com entrega rápida.</p>
+      <button class="btn-hero">Agende Agora</button>
+    </div>
+  </section>
+
+  <!-- CARDS CONTAINER -->
+  <main class="produtos">
+    <div class="titulo-secao">
+      <div class="barra-marca"></div>
+      <h2>Itens Para Cães</h2>
+    </div>
+
+    <div class="grid-cards">
+      <!-- CARD 1 -->
+      <article class="card">
+        <span class="desconto">10%</span>
+        <div class="imagem-container">
+          <img src="assets/petisco.png" alt="Petisco para Cães">
+        </div>
+        <h3 class="card-titulo">Petisco para Cães Origem Natural - Pele e Pelo 65 g</h3>
+        <p class="preco-antigo">R$ 8,49</p>
+        <p class="preco-atual">R$ 7,64</p>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card">
+        <span class="desconto">10%</span>
+        <div class="imagem-container">
+          <img src="assets/casinha.png" alt="Kit Cama Caminha">
+        </div>
+        <h3 class="card-titulo">Kit Cama Caminha 4 Peças Para Pet Cachorro - Tamanho G</h3>
+        <p class="preco-antigo">R$ 189,91</p>
+        <p class="preco-atual">R$ 170,91</p>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card">
+        <span class="desconto">10%</span>
+        <div class="imagem-container">
+          <img src="assets/roupa.png" alt="Roupa Para Cachorro">
+        </div>
+        <h3 class="card-titulo">Roupa Para Cachorro Moletom Pet Flanelado com Capuz</h3>
+        <p class="preco-antigo">R$ 44,99</p>
+        <p class="preco-atual">R$ 40,90</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; Pelos e Patas - Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
