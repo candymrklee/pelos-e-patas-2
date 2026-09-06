@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Layout - Grid System</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Container do Grid de 12 colunas */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Classes utilitárias de colunas */
+    .col-12 { grid-column: span 12; }
+    .col-9  { grid-column: span 9; }
+    .col-6  { grid-column: span 6; }
+    .col-4  { grid-column: span 4; }
+    .col-3  { grid-column: span 3; }
+
+    /* Estilos dos elementos do layout */
+    .grid-container > div {
+      background: #f5f5f5;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+
+    /* Header */
+    .header {
+      background: #1976d2;
+      color: white;
+      text-align: center;
+      padding: 32px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #e3f2fd;
+    }
+
+    .sidebar h3 {
+      color: #1976d2;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #1976d2;
+      padding-bottom: 8px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 12px 0;
+      border-bottom: 1px solid #bbdefb;
+    }
+
+    .sidebar li:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar a {
+      color: #1565c0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+
+    /* Conteúdo Principal */
+    .content {
+      background: #fff;
+    }
+
+    .post {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .post:last-child {
+      border-bottom: none;
+    }
+
+    .post h2 {
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .post-meta {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .post p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .read-more {
+      display: inline-block;
+      background: #1976d2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .read-more:hover {
+      background: #1565c0;
+    }
+
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 24px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+      }
+
+      .col-9, .col-3 {
+        grid-column: span 12;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <!-- Header (ocupa todas as 12 colunas) -->
+    <div class="header col-12">
+      <h1>🐾 Pelos e Patas</h1>
+      <p>Seu blog sobre cuidados com animais de estimação</p>
+    </div>
+
+    <!-- Sidebar (3 colunas) -->
+    <aside class="sidebar col-3">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="#">🐕 Cães</a></li>
+        <li><a href="#">🐈 Gatos</a></li>
+        <li><a href="#">🐦 Aves</a></li>
+        <li><a href="#">🐠 Peixes</a></li>
+        <li><a href="#">🐰 Pequenos Animais</a></li>
+      </ul>
+
+      <h3 style="margin-top: 32px;">Links Úteis</h3>
+      <ul>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+      </ul>
+    </aside>
+
+    <!-- Conteúdo Principal (9 colunas) -->
+    <main class="content col-9">
+      <!-- Post 1 -->
+      <article class="post">
+        <h2>Como escolher a ração ideal para seu cachorro</h2>
+        <p class="post-meta">Publicado em 5 de setembro de 2026 por Dra. Ana Silva</p>
+        <p>A escolha da ração adequada é fundamental para a saúde do seu cão. Fatores como idade, porte, nível de atividade e condições de saúde específicas devem ser considerados...</p>
+        <a href="#" class="read-more">Ler mais →</a>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post">
+        <h2>5 sinais de que seu gato precisa de mais atenção</h2>
+        <p class="post-meta">Publicado em 3 de setembro de 2026 por Dr. Carlos Mendes</p>
+        <p>Gatos são animais independentes, mas isso não significa que não precisem de carinho. Comportamentos como miado excessivo, destruição de objetos e isolamento podem indicar...</p>
+        <a href="#" class="read-more">Ler mais →</a>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="post">
+        <h2>Guia completo de vacinação para filhotes</h2>
+        <p class="post-meta">Publicado em 1 de setembro de 2026 por Dra. Ana Silva</p>
+        <p>As vacinas são essenciais para proteger seu filhote de doenças graves. Conheça o calendário de vacinação recomendado e entenda a importância de cada dose...</p>
+        <a href="#" class="read-more">Ler mais →</a>
+      </article>
+    </main>
+
+    <!-- Footer (ocupa todas as 12 colunas) -->
+    <footer class="footer col-12">
+      <p>© 2026 Pelos e Patas. Todos os direitos reservados.</p>
+      <p>Feito com ❤️ para amantes de animais</p>
+    </footer>
+  </div>
+
+</body>
+</html>
