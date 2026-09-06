@@ -7,8 +7,8 @@
 
   <style>
     :root {
-      --azul-pelos-patas: #005691;
-      --laranja-pelos-patas: #fd6b00;
+      --azul-pelos-patas: #025590;
+      --laranja-pelos-patas: #fb6d0d;
       --branco: #ffffff;
       --cinza-fundo: #f4f7f9;
       --cinza-borda: #d9e1e6;
@@ -27,103 +27,122 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /*
-      HEADER DO SITE
-      Caso o seu projeto já tenha uma header pronta,
-      mantenha a header original e não cole esta parte.
-    */
-    .site-header {
-      background-color: var(--azul-pelos-patas);
-      border-bottom: 3px solid var(--laranja-pelos-patas);
+    /* HEADER PADRONIZADO */
+    header {
+      width: 100%;
     }
 
-    .top-header {
+    .top-bar {
+      background-color: var(--azul-pelos-patas);
+      color: var(--branco);
+      padding: 12px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      max-width: 1200px;
-      min-height: 64px;
-      margin: 0 auto;
-      padding: 10px 24px;
     }
 
     .logo {
+      font-size: 26px;
+      font-weight: bold;
       color: var(--branco);
-      font-size: 1.35rem;
-      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
       white-space: nowrap;
+    }
+
+    .logo-icon {
+      background-color: var(--laranja-pelos-patas);
+      color: var(--branco);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
     }
 
     .logo span {
       color: var(--laranja-pelos-patas);
     }
 
-    .search-area {
-      display: flex;
-      flex: 1;
-      max-width: 500px;
-    }
-
-    .search-area input {
-      width: 100%;
-      padding: 11px 15px;
-      border: none;
-      border-radius: 20px 0 0 20px;
-      outline: none;
-    }
-
-    .search-area button {
-      background-color: var(--laranja-pelos-patas);
-      color: var(--branco);
-      border: none;
-      padding: 0 18px;
-      border-radius: 0 20px 20px 0;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .header-links {
+    .search-box {
+      background: var(--branco);
+      border-radius: 30px;
+      padding: 4px 6px 4px 20px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      width: 100%;
+      max-width: 550px;
     }
 
-    .header-links a {
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .search-box button {
+      background: var(--laranja-pelos-patas);
       color: var(--branco);
-      font-size: 0.9rem;
-      text-decoration: none;
+      border: none;
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
       white-space: nowrap;
     }
 
-    .main-nav {
-      background-color: var(--branco);
-    }
-
-    .main-nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 24px;
-      list-style: none;
-    }
-
-    .main-nav a {
-      color: #202020;
-      font-weight: 700;
+    .user-actions a {
+      color: var(--branco);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .main-nav a:hover {
+    .cart-badge {
+      background: var(--laranja-pelos-patas);
+      color: var(--branco);
+      border-radius: 50%;
+      padding: 2px 7px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .sub-nav {
+      background: var(--branco);
+      display: flex;
+      justify-content: space-around;
+      padding: 14px 40px;
+      border-bottom: 3px solid var(--laranja-pelos-patas);
+    }
+
+    .sub-nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .sub-nav a:hover {
       color: var(--laranja-pelos-patas);
     }
 
-    /*
-      GRID SYSTEM — 12 COLUNAS
-    */
+    /* GRID SYSTEM — 12 COLUNAS */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -153,10 +172,7 @@
       grid-column: span 3;
     }
 
-    /*
-      CABEÇALHO DA ÁREA DO BLOG
-      Não confunde com a header superior do site.
-    */
+    /* CABEÇALHO DA ÁREA DO BLOG */
     .blog-header {
       background-color: var(--azul-pelos-patas);
       color: var(--branco);
@@ -175,9 +191,7 @@
       font-size: 1rem;
     }
 
-    /*
-      SIDEBAR — 3 COLUNAS
-    */
+    /* SIDEBAR — 3 COLUNAS */
     .sidebar {
       height: fit-content;
       background-color: #eaf4fa;
@@ -221,9 +235,7 @@
       color: var(--laranja-pelos-patas);
     }
 
-    /*
-      CONTEÚDO PRINCIPAL — 9 COLUNAS
-    */
+    /* CONTEÚDO PRINCIPAL — 9 COLUNAS */
     .content {
       background-color: var(--branco);
       border: 1px solid var(--cinza-borda);
@@ -281,40 +293,135 @@
       background-color: #d95700;
     }
 
-    /*
-      RODAPÉ
-    */
-    .blog-footer {
+    /* RODAPÉ COMPLETO */
+    .site-footer {
       background-color: var(--azul-pelos-patas);
-      border-top: 5px solid var(--laranja-pelos-patas);
-      border-radius: 8px;
       color: var(--branco);
-      padding: 24px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .footer-logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--branco);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .footer-logo-icon {
+      background-color: var(--laranja-pelos-patas);
+      color: var(--branco);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .footer-logo span {
+      color: var(--laranja-pelos-patas);
+    }
+
+    .footer-subtitle {
+      background-color: var(--laranja-pelos-patas);
+      color: var(--branco);
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+    }
+
+    .footer-col h3 {
+      color: var(--laranja-pelos-patas);
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: var(--branco);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      font-size: 22px;
+    }
+
+    .social-icons a {
+      color: var(--branco);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      background-color: var(--laranja-pelos-patas);
       text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--branco);
     }
 
-    .blog-footer p + p {
-      margin-top: 8px;
-      font-size: 0.9rem;
-    }
-
-    /*
-      RESPONSIVIDADE
-    */
+    /* RESPONSIVIDADE */
     @media (max-width: 768px) {
-      .top-header {
+      .top-bar {
         flex-wrap: wrap;
         justify-content: center;
+        padding: 12px 16px;
       }
 
-      .search-area {
+      .search-box {
         order: 3;
-        flex-basis: 100%;
+        max-width: 100%;
       }
 
-      .main-nav ul {
-        justify-content: space-around;
-        gap: 12px;
+      .sub-nav {
+        padding: 14px 16px;
         overflow-x: auto;
       }
 
@@ -343,62 +450,55 @@
       .sidebar {
         padding: 20px;
       }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 24px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!--
-    Se a header do seu site já existe, apague APENAS esta área
-    entre "INÍCIO HEADER" e "FIM HEADER".
-    Mantenha o restante do código.
-  -->
-
-  <!-- INÍCIO HEADER -->
-  <header class="site-header">
-    <div class="top-header">
-      <a href="#" class="logo">🐾 pelos<span>&</span>patas</a>
-
-      <form class="search-area">
-        <input
-          type="search"
-          placeholder="O que seu pet precisa hoje? (ex: Ração, Cães...)"
-        >
+  <!-- HEADER PADRONIZADO -->
+  <header>
+    <div class="top-bar">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🐾</span>
+        pelos<span>&</span>patas
+      </a>
+      
+      <form class="search-box">
+        <input type="text" placeholder="O que seu pet precisa hoje? (ex: Ração Cães, Antipulgas...)">
         <button type="submit">Buscar</button>
       </form>
 
-      <nav class="header-links">
+      <div class="user-actions">
         <a href="#">👤 Olá, Entrar</a>
-        <a href="#">🛒 Carrinho</a>
-      </nav>
+        <a href="#">🛒 Carrinho <span class="cart-badge">3</span></a>
+      </div>
     </div>
 
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#">Cães</a></li>
-        <li><a href="#">Gatos</a></li>
-        <li><a href="#">Blog Pet</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Quem Somos?</a></li>
-      </ul>
+    <nav class="sub-nav">
+      <a href="#">Cães</a>
+      <a href="#">Gatos</a>
+      <a href="blog.html">Blog Pet</a>
+      <a href="#">Serviços</a>
+      <a href="quem-somos.html">Quem Somos?</a>
     </nav>
   </header>
-  <!-- FIM HEADER -->
 
-  <!-- INÍCIO DO EXERCÍCIO: GRID DE 12 COLUNAS -->
+  <!-- GRID DE 12 COLUNAS -->
   <main class="grid-container">
 
-    <!-- Ocupa 12 colunas -->
     <section class="blog-header col-12">
       <h1>Blog Pelos & Patas</h1>
       <p>Dicas, cuidados e informações para o bem-estar do seu pet.</p>
     </section>
 
-    <!-- Sidebar: ocupa 3 das 12 colunas -->
     <aside class="sidebar col-3">
       <h2>Categorias</h2>
-
       <ul>
         <li><a href="#">🐶 Cães</a></li>
         <li><a href="#">🐱 Gatos</a></li>
@@ -408,7 +508,6 @@
       </ul>
 
       <h2>Links úteis</h2>
-
       <ul>
         <li><a href="#">Sobre nós</a></li>
         <li><a href="#">Fale conosco</a></li>
@@ -416,67 +515,71 @@
       </ul>
     </aside>
 
-    <!-- Conteúdo: ocupa 9 das 12 colunas -->
     <section class="content col-9">
       <h2 class="content-title">Últimos artigos</h2>
 
       <article class="post">
         <h2>Como escolher a ração ideal para o seu cachorro</h2>
-
-        <p class="post-meta">
-          Publicado em 6 de setembro de 2026 · Categoria: Cães
-        </p>
-
-        <p>
-          Escolher uma ração adequada ajuda a manter a saúde, a energia
-          e a qualidade de vida do seu cão. Considere a idade, o porte
-          e as necessidades específicas do animal.
-        </p>
-
+        <p class="post-meta">Publicado em 6 de setembro de 2026 · Categoria: Cães</p>
+        <p>Escolher uma ração adequada ajuda a manter a saúde, a energia e a qualidade de vida do seu cão. Considere a idade, o porte e as necessidades específicas do animal.</p>
         <a href="#" class="read-more">Ler mais</a>
       </article>
 
       <article class="post">
         <h2>5 cuidados essenciais para gatos dentro de casa</h2>
-
-        <p class="post-meta">
-          Publicado em 4 de setembro de 2026 · Categoria: Gatos
-        </p>
-
-        <p>
-          Gatos que vivem em ambientes internos também precisam de
-          estímulos, locais seguros para descanso, alimentação correta
-          e acompanhamento veterinário regular.
-        </p>
-
+        <p class="post-meta">Publicado em 4 de setembro de 2026 · Categoria: Gatos</p>
+        <p>Gatos que vivem em ambientes internos também precisam de estímulos, locais seguros para descanso, alimentação correta e acompanhamento veterinário regular.</p>
         <a href="#" class="read-more">Ler mais</a>
       </article>
 
       <article class="post">
         <h2>Por que as consultas veterinárias são importantes?</h2>
-
-        <p class="post-meta">
-          Publicado em 1 de setembro de 2026 · Categoria: Saúde
-        </p>
-
-        <p>
-          Consultas preventivas permitem identificar alterações antes
-          que elas se tornem problemas maiores, contribuindo para uma
-          vida mais saudável e feliz para o pet.
-        </p>
-
+        <p class="post-meta">Publicado em 1 de setembro de 2026 · Categoria: Saúde</p>
+        <p>Consultas preventivas permitem identificar alterações antes que elas se tornem problemas maiores, contribuindo para uma vida mais saudável e feliz para o pet.</p>
         <a href="#" class="read-more">Ler mais</a>
       </article>
     </section>
 
-    <!-- Ocupa 12 colunas -->
-    <footer class="blog-footer col-12">
-      <p>© 2026 Pelos & Patas — Todos os direitos reservados.</p>
-      <p>Feito com carinho para quem ama animais.</p>
-    </footer>
-
   </main>
-  <!-- FIM DO EXERCÍCIO -->
+
+  <!-- RODAPÉ COMPLETO -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-col-logo">
+        <a href="index.html" class="footer-logo">
+          <span class="footer-logo-icon">🐾</span>
+          Pelos<span>&</span>Patas
+        </a>
+        <span class="footer-subtitle">Estética Animal</span>
+      </div>
+
+      <div class="footer-col">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="quem-somos.html">&gt; Quem Somos</a></li>
+          <li><a href="#">&gt; Serviços e Produtos</a></li>
+          <li><a href="#">&gt; Galeria</a></li>
+          <li><a href="#">&gt; Onde estamos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Fale Conosco</h3>
+        <div class="contact-item">
+          <span>💬</span> (11) 97812-8470
+        </div>
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="Facebook">📘</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Pelos & Patas — Todos os direitos reservados.
+    </div>
+  </footer>
 
 </body>
 </html>
