@@ -41,13 +41,26 @@
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: bold;
       color: var(--branco);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      text-decoration: none;
       white-space: nowrap;
+    }
+
+    .logo-icon {
+      background-color: var(--laranja);
+      color: var(--branco);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
     }
 
     .logo span {
@@ -57,19 +70,19 @@
     /* BARRA DE PESQUISA */
     .search-box {
       background: var(--branco);
-      border-radius: 25px;
-      padding: 4px 6px 4px 18px;
+      border-radius: 30px;
+      padding: 4px 6px 4px 20px;
       display: flex;
       align-items: center;
       width: 100%;
-      max-width: 500px;
+      max-width: 550px;
     }
 
     .search-box input {
       border: none;
       outline: none;
       width: 100%;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--cinza-texto);
     }
 
@@ -77,19 +90,27 @@
       background: var(--laranja);
       color: var(--branco);
       border: none;
-      padding: 8px 20px;
+      padding: 8px 24px;
       border-radius: 20px;
       font-weight: bold;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .user-actions {
       display: flex;
       align-items: center;
       gap: 20px;
-      font-size: 13px;
+      font-size: 14px;
       white-space: nowrap;
+    }
+
+    .user-actions a {
+      color: var(--branco);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .cart-badge {
@@ -97,7 +118,7 @@
       color: var(--branco);
       border-radius: 50%;
       padding: 2px 7px;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: bold;
     }
 
@@ -107,7 +128,7 @@
       display: flex;
       justify-content: space-around;
       padding: 14px 40px;
-      border-bottom: 2px solid var(--laranja);
+      border-bottom: 3px solid var(--laranja);
       position: relative;
       z-index: 1;
     }
@@ -119,7 +140,11 @@
       font-size: 16px;
     }
 
-    /* HERO SECTION CORRIGIDA */
+    .sub-nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO SECTION */
     .hero {
       background: linear-gradient(180deg, #ffd8c0 0%, #ffaa7d 100%);
       position: relative;
@@ -155,7 +180,6 @@
       margin-bottom: 24px;
     }
 
-    /* ESTILO DO BOTÃO/LINK DE AGENDAMENTO */
     .btn-agende {
       display: inline-block;
       background-color: var(--azul);
@@ -168,14 +192,13 @@
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       transition: background 0.2s;
-      text-decoration: none; /* Remove o sublinhado do link */
+      text-decoration: none;
     }
 
     .btn-agende:hover {
       background-color: var(--azul-escuro);
     }
 
-    /* POSICIONAMENTO DA IMAGEM */
     .hero-image {
       position: absolute;
       right: 0;
@@ -321,13 +344,118 @@
       cursor: pointer;
     }
 
-    footer {
-      background-color: var(--azul-escuro);
+    /* RODAPÉ COMPLETO */
+    .site-footer {
+      background-color: var(--azul);
       color: var(--branco);
-      text-align: center;
-      padding: 24px;
       margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .footer-logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--branco);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .footer-logo-icon {
+      background-color: var(--laranja);
+      color: var(--branco);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .footer-logo span {
+      color: var(--laranja);
+    }
+
+    .footer-subtitle {
+      background-color: var(--laranja);
+      color: var(--branco);
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+    }
+
+    .footer-col h3 {
+      color: var(--laranja);
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: var(--branco);
+      text-decoration: none;
       font-size: 14px;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      font-size: 22px;
+    }
+
+    .social-icons a {
+      color: var(--branco);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      background-color: var(--laranja);
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--branco);
     }
 
     @media (max-width: 900px) {
@@ -345,32 +473,39 @@
       .produtos {
         grid-template-columns: 1fr;
       }
+      .footer-content {
+        flex-direction: column;
+        gap: 24px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER COMPLETO -->
+  <!-- HEADER PADRONIZADO -->
   <header>
     <div class="top-bar">
-      <div class="logo">pelos<span>&</span>patas</div>
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🐾</span>
+        pelos<span>&</span>patas
+      </a>
       
       <div class="search-box">
         <input type="text" placeholder="O que seu pet precisa hoje? (ex: Ração Cães, Antipulgas...)">
-        <button>Buscar</button>
+        <button type="submit">Buscar</button>
       </div>
 
       <div class="user-actions">
-        <span>👤 Olá, Entrar</span>
-        <span>🛒 Carrinho <span class="cart-badge">3</span></span>
+        <a href="#">👤 Olá, Entrar</a>
+        <a href="#">🛒 Carrinho <span class="cart-badge">3</span></a>
       </div>
     </div>
 
     <nav class="sub-nav">
       <a href="#">Cães</a>
       <a href="#">Gatos</a>
-      <a href="#">Outros Pets</a>
+      <a href="blog.html">Blog Pet</a>
       <a href="#">Serviços</a>
       <a href="quem-somos.html">Quem Somos?</a>
     </nav>
@@ -381,7 +516,6 @@
     <div class="hero-container">
       <div class="hero-text">
         <h1>Cuidamos do seu Pet com amor, respeito e bem-estar</h1>
-        <!-- BOTÃO TRANSFORMADO EM LINK FUNCIONAL -->
         <a href="agendamento.html" class="btn-agende">Agende Agora</a>
       </div>
 
@@ -446,8 +580,43 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; Pelos e Patas - Todos os direitos reservados.</p>
+  <!-- RODAPÉ COMPLETO -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-col-logo">
+        <a href="index.html" class="footer-logo">
+          <span class="footer-logo-icon">🐾</span>
+          Pelos<span>&</span>Patas
+        </a>
+        <span class="footer-subtitle">Estética Animal</span>
+      </div>
+
+      <div class="footer-col">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="quem-somos.html">&gt; Quem Somos</a></li>
+          <li><a href="#">&gt; Serviços e Produtos</a></li>
+          <li><a href="#">&gt; Galeria</a></li>
+          <li><a href="#">&gt; Onde estamos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Fale Conosco</h3>
+        <div class="contact-item">
+          <span>💬</span> (11) 97812-8470
+        </div>
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="Facebook">📘</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Pelos & Patas — Todos os direitos reservados.
+    </div>
   </footer>
 
 </body>
