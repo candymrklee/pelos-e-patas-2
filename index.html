@@ -328,6 +328,167 @@
       cursor: pointer;
     }
 
+    /* =========================================================
+       SEÇÃO DE SERVIÇOS (HIERARQUIA VISUAL)
+    ========================================================= */
+    .servicos-section {
+      max-width: 1180px;
+      margin: 60px auto 40px;
+      padding: 0 24px;
+    }
+
+    .servicos-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    /* Card Padrão de Serviço */
+    .card-servico {
+      background: var(--branco);
+      border-radius: 24px;
+      padding: 32px 24px;
+      flex: 1;
+      max-width: 350px;
+      box-shadow: 0 8px 24px rgba(2, 85, 144, 0.08);
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-servico:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-servico .servico-titulo {
+      font-size: 22px;
+      color: var(--azul-escuro);
+      margin-bottom: 12px;
+    }
+
+    .card-servico .servico-descricao {
+      font-size: 14px;
+      color: var(--cinza-texto);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .card-servico .servico-preco {
+      font-size: 30px;
+      font-weight: bold;
+      color: var(--azul-escuro);
+      margin-bottom: 20px;
+    }
+
+    .btn-servico {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 30px;
+      border: 2px solid var(--azul);
+      background: transparent;
+      color: var(--azul);
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-servico:hover {
+      background: var(--azul);
+      color: var(--branco);
+    }
+
+    /* --- HIGHLIGHT / HIERARQUIA: CARD DO MEIO (2 BANHOS) --- */
+    .card-servico.destaque {
+      border: 3px solid var(--laranja);
+      transform: scale(1.08);
+      box-shadow: 0 16px 36px rgba(251, 109, 13, 0.25);
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-servico.destaque:hover {
+      transform: scale(1.10);
+    }
+
+    .tag-destaque {
+      background: var(--laranja);
+      color: var(--branco);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .card-servico.destaque .servico-titulo {
+      font-size: 24px;
+      color: var(--azul-escuro);
+    }
+
+    /* Preço Promocional Aparente */
+    .preco-promocional {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .preco-promocional .de {
+      font-size: 15px;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .preco-promocional .por {
+      font-size: 42px;
+      font-weight: bold;
+      color: var(--laranja);
+      line-height: 1.1;
+      margin: 4px 0;
+    }
+
+    .preco-promocional .economia {
+      font-size: 13px;
+      font-weight: bold;
+      color: #2e7d32;
+      background: #e8f5e9;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .btn-servico-destaque {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 30px;
+      border: none;
+      background: var(--laranja);
+      color: var(--branco);
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(251, 109, 13, 0.35);
+      transition: background 0.2s ease;
+    }
+
+    .btn-servico-destaque:hover {
+      background: #e05e07;
+    }
+
     /* RODAPÉ COMPLETO */
     .site-footer {
       background-color: var(--azul);
@@ -432,6 +593,12 @@
       }
       .produtos {
         grid-template-columns: 1fr;
+      }
+      .servicos-grid {
+        flex-direction: column;
+      }
+      .card-servico.destaque {
+        transform: scale(1);
       }
       .footer-content {
         flex-direction: column;
@@ -538,6 +705,49 @@
       </article>
     </section>
   </main>
+
+  <!-- SEÇÃO DE SERVIÇOS (PACOTES DE BANHO) -->
+  <section class="servicos-section">
+    <div class="cabecalho">
+      <span class="marca"></span>
+      <h2>Pacotes de Banho Premium</h2>
+    </div>
+
+    <div class="servicos-grid">
+      
+      <!-- ESQUERDA: 1 Banho Premium -->
+      <article class="card-servico">
+        <h3 class="servico-titulo">1 Banho Premium</h3>
+        <p class="servico-descricao">Higienização completa, corte de unhas e limpeza das orelhas para uma ocasião especial.</p>
+        <div class="servico-preco">R$ 70,00</div>
+        <a href="agendamento.html" class="btn-servico">Agendar Banho</a>
+      </article>
+
+      <!-- MEIO: 2 Banhos Premium (DESTAQUE E VALOR PROMOCIONAL) -->
+      <article class="card-servico destaque">
+        <span class="tag-destaque">O Mais Vendido</span>
+        <h3 class="servico-titulo">2 Banhos Premium</h3>
+        <p class="servico-descricao">Manutenção quinzenal perfeita com hidratação leve para manter a pelagem sempre macia.</p>
+        
+        <div class="preco-promocional">
+          <span class="de">De R$ 140,00</span>
+          <span class="por">R$ 99,90</span>
+          <span class="economia">Economize R$ 40,10</span>
+        </div>
+        
+        <a href="agendamento.html" class="btn-servico-destaque">Garantir Oferta</a>
+      </article>
+
+      <!-- DIREITA: 3 Banhos Premium -->
+      <article class="card-servico">
+        <h3 class="servico-titulo">3 Banhos Premium</h3>
+        <p class="servico-descricao">Plano mensal completo para manter seu pet limpo, cheiroso e protegido o mês inteiro.</p>
+        <div class="servico-preco">R$ 180,00</div>
+        <a href="agendamento.html" class="btn-servico">Agendar Plano</a>
+      </article>
+
+    </div>
+  </section>
 
   <!-- RODAPÉ COMPLETO -->
   <footer class="site-footer">
