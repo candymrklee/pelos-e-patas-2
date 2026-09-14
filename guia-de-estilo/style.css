@@ -1,0 +1,168 @@
+/* ===================================================
+   PALETA DE CORES & BASE TIPOGRÁFICA (PELOS & PATAS)
+   =================================================== */
+:root {
+  --azul-escuro: #004B82;
+  --laranja-destaque: #FF6600;
+  --texto-principal: #222222;
+  --texto-suave: #555555;
+  --fundo-pagina: #FFFFFF;
+  --fundo-bloco: #F4F7FA;
+  
+  /* Tamanho base para o controle interativo via JS */
+  --base-font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: var(--base-font-size);
+  color: var(--texto-principal);
+  background-color: var(--fundo-pagina);
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* CABEÇALHO */
+.top-header {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+.breadcrumbs {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--laranja-destaque);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.top-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  line-height: 1.1;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--texto-suave);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* FERRAMENTA INTERATIVA */
+.interactive-lab {
+  background: var(--fundo-bloco);
+  padding: 24px;
+  border-radius: 8px;
+  border-left: 4px solid var(--laranja-destaque);
+  margin-bottom: 40px;
+}
+
+.tag-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--laranja-destaque);
+  letter-spacing: 1px;
+}
+
+.interactive-lab h2 {
+  font-size: 1.5rem;
+  color: var(--azul-escuro);
+  margin: 4px 0 8px 0;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.controls button {
+  background: var(--azul-escuro);
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.controls button:hover {
+  background: var(--laranja-destaque);
+}
+
+/* ARTIGO & ESCALA TIPOGRÁFICA */
+.step-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--laranja-destaque);
+}
+
+.article-body h2 {
+  font-size: 2rem;
+  color: var(--azul-escuro);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.meta-info {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  margin-bottom: 24px;
+}
+
+.article-body h3 {
+  font-size: 1.4rem;
+  color: var(--azul-escuro);
+  margin: 28px 0 8px 0;
+}
+
+.article-body p {
+  margin-bottom: 16px;
+}
+
+blockquote {
+  border-left: 3px solid var(--laranja-destaque);
+  padding-left: 16px;
+  font-style: italic;
+  color: var(--texto-suave);
+  margin: 20px 0;
+}
+
+.scale-list {
+  list-style: none;
+  margin: 16px 0;
+}
+
+.scale-list li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.scale-list strong {
+  color: var(--azul-escuro);
+}
+
+/* RODAPÉ */
+.main-footer {
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
