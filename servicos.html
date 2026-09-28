@@ -122,9 +122,11 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+      transition: color 0.2s ease;
     }
 
-    .sub-nav a:hover {
+    .sub-nav a:hover,
+    .sub-nav a.active {
       color: var(--laranja);
     }
 
@@ -379,6 +381,17 @@
     }
 
     @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        padding: 16px 20px;
+      }
+
+      .sub-nav {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 20px;
+      }
+
       .grid-servicos {
         grid-template-columns: 1fr;
       }
@@ -429,10 +442,11 @@
     </div>
 
     <nav class="sub-nav">
+      <a href="index.html">Início</a>
       <a href="#">Cães</a>
       <a href="#">Gatos</a>
       <a href="blog.html">Blog Pet</a>
-      <a href="#">Serviços</a>
+      <a href="servicos.html" class="active">Serviços</a>
       <a href="quem-somos.html">Quem Somos?</a>
     </nav>
   </header>
