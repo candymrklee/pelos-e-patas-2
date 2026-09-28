@@ -20,11 +20,34 @@
       padding: 0;
     }
 
+    /* TÓPICO 3: Scroll Suave e Compensação para Navbar Fixa */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: var(--cinza-claro);
       color: var(--azul-escuro);
       overflow-x: hidden;
+      padding-top: 125px; /* Altura da navbar fixa */
+    }
+
+    /* Compensação para os títulos não ficarem escondidos atrás do cabeçalho */
+    section[id],
+    main[id],
+    footer[id] {
+      scroll-margin-top: 135px;
+    }
+
+    /* HEADER FIXO NO TOPO */
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     /* BARRA SUPERIOR */
@@ -36,8 +59,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      position: relative;
-      z-index: 2;
     }
 
     .logo {
@@ -106,15 +127,13 @@
       font-weight: bold;
     }
 
-    /* NAV SECUNDÁRIO */
+    /* MENU DE NAVEGAÇÃO */
     .sub-nav {
       background: var(--branco);
       display: flex;
       justify-content: space-around;
       padding: 14px 40px;
       border-bottom: 3px solid var(--laranja);
-      position: relative;
-      z-index: 1;
     }
 
     .sub-nav a {
@@ -122,6 +141,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+      transition: color 0.2s ease;
     }
 
     .sub-nav a:hover {
@@ -328,9 +348,7 @@
       cursor: pointer;
     }
 
-    /* =========================================================
-       SEÇÃO DE SERVIÇOS (HIERARQUIA VISUAL)
-    ========================================================= */
+    /* SEÇÃO DE SERVIÇOS */
     .servicos-section {
       max-width: 1180px;
       margin: 60px auto 40px;
@@ -345,7 +363,6 @@
       margin-top: 20px;
     }
 
-    /* Card Padrão de Serviço */
     .card-servico {
       background: var(--branco);
       border-radius: 24px;
@@ -407,7 +424,7 @@
       color: var(--branco);
     }
 
-    /* --- HIGHLIGHT / HIERARQUIA: CARD DO MEIO (2 BANHOS) --- */
+    /* CARD DESTAQUE */
     .card-servico.destaque {
       border: 3px solid var(--laranja);
       transform: scale(1.08);
@@ -437,7 +454,6 @@
       color: var(--azul-escuro);
     }
 
-    /* Preço Promocional Aparente */
     .preco-promocional {
       display: flex;
       flex-direction: column;
@@ -580,6 +596,16 @@
     }
 
     @media (max-width: 900px) {
+      body {
+        padding-top: 170px;
+      }
+      section[id], main[id], footer[id] {
+        scroll-margin-top: 180px;
+      }
+      .top-bar {
+        flex-direction: column;
+        padding: 12px 20px;
+      }
       .hero-container {
         flex-direction: column;
         text-align: center;
@@ -610,11 +636,11 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header>
+  <!-- HEADER FIXO NO TOPO -->
+  <header class="fixed-header">
     <div class="top-bar">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.png" alt="Pelos & Patas">
+      <a href="#inicio" class="logo">
+        <img src="assets/logo.png" alt="Pelos & Patas - Ir para início">
       </a>
       
       <div class="search-box">
@@ -628,21 +654,23 @@
       </div>
     </div>
 
+    <!-- NAVEGAÇÃO -->
     <nav class="sub-nav">
-      <a href="#">Cães</a>
-      <a href="#">Gatos</a>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#servicos">Serviços</a>
       <a href="blog.html">Blog Pet</a>
-      <a href="servicos.html">Serviços</a>
       <a href="quem-somos.html">Quem Somos?</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+  <!-- HERO SECTION (#inicio) -->
+  <section id="inicio" class="hero">
     <div class="hero-container">
       <div class="hero-text">
         <h1>Cuidamos do seu Pet com amor, respeito e bem-estar</h1>
-        <a href="agendamento.html" class="btn-agende">Agende Agora</a>
+        <a href="servicos.html" class="btn-agende">Agende Agora</a>
       </div>
 
       <div class="hero-image">
@@ -651,8 +679,8 @@
     </div>
   </section>
 
-  <!-- CATALOGO DE PRODUTOS -->
-  <main class="catalogo">
+  <!-- CATALOGO DE PRODUTOS (#produtos) -->
+  <main id="produtos" class="catalogo">
     <div class="cabecalho">
       <span class="marca"></span>
       <h2>Itens Para Cães</h2>
@@ -706,24 +734,23 @@
     </section>
   </main>
 
-  <!-- SEÇÃO DE SERVIÇOS (PACOTES DE BANHO) -->
-  <section class="servicos-section">
+  <!-- SEÇÃO DE SERVIÇOS (#servicos) -->
+  <section id="servicos" class="servicos-section">
     <div class="cabecalho">
       <span class="marca"></span>
       <h2>Pacotes de Banho Premium</h2>
     </div>
 
     <div class="servicos-grid">
-      
-      <!-- ESQUERDA: 1 Banho Premium -->
+      <!-- 1 Banho -->
       <article class="card-servico">
         <h3 class="servico-titulo">1 Banho Premium</h3>
         <p class="servico-descricao">Higienização completa, corte de unhas e limpeza das orelhas para uma ocasião especial.</p>
         <div class="servico-preco">R$ 70,00</div>
-        <a href="agendamento.html" class="btn-servico">Agendar Banho</a>
+        <a href="servicos.html" class="btn-servico">Agendar Banho</a>
       </article>
 
-      <!-- MEIO: 2 Banhos Premium (DESTAQUE E VALOR PROMOCIONAL) -->
+      <!-- 2 Banhos -->
       <article class="card-servico destaque">
         <span class="tag-destaque">O Mais Vendido</span>
         <h3 class="servico-titulo">2 Banhos Premium</h3>
@@ -735,25 +762,24 @@
           <span class="economia">Economize R$ 40,10</span>
         </div>
         
-        <a href="agendamento.html" class="btn-servico-destaque">Garantir Oferta</a>
+        <a href="servicos.html" class="btn-servico-destaque">Garantir Oferta</a>
       </article>
 
-      <!-- DIREITA: 3 Banhos Premium -->
+      <!-- 3 Banhos -->
       <article class="card-servico">
         <h3 class="servico-titulo">3 Banhos Premium</h3>
         <p class="servico-descricao">Plano mensal completo para manter seu pet limpo, cheiroso e protegido o mês inteiro.</p>
         <div class="servico-preco">R$ 180,00</div>
-        <a href="agendamento.html" class="btn-servico">Agendar Plano</a>
+        <a href="servicos.html" class="btn-servico">Agendar Plano</a>
       </article>
-
     </div>
   </section>
 
-  <!-- RODAPÉ COMPLETO -->
-  <footer class="site-footer">
+  <!-- RODAPÉ E CONTATO (#contato) -->
+  <footer id="contato" class="site-footer">
     <div class="footer-content">
       <div class="footer-col-logo">
-        <a href="index.html" class="footer-logo">
+        <a href="#inicio" class="footer-logo">
           <img src="assets/logo2.png" alt="Pelos & Patas Estética Animal">
         </a>
       </div>
@@ -763,8 +789,8 @@
         <ul>
           <li><a href="quem-somos.html">&gt; Quem Somos</a></li>
           <li><a href="servicos.html">&gt; Serviços e Produtos</a></li>
-          <li><a href="#">&gt; Galeria</a></li>
-          <li><a href="#">&gt; Onde estamos</a></li>
+          <li><a href="blog.html">&gt; Blog Pet</a></li>
+          <li><a href="#contato">&gt; Onde estamos / Contato</a></li>
         </ul>
       </div>
 
