@@ -121,9 +121,11 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+      transition: color 0.2s ease;
     }
 
-    .sub-nav a:hover {
+    .sub-nav a:hover,
+    .sub-nav a.active {
       color: var(--laranja-pelos-patas);
     }
 
@@ -419,12 +421,14 @@
       </div>
     </div>
 
+    <!-- NAVEGAÇÃO COM ORDEM CORRIGIDA -->
     <nav class="sub-nav">
-      <a href="#">Cães</a>
-      <a href="#">Gatos</a>
-      <a href="blog.html">Blog Pet</a>
-      <a href="#">Serviços</a>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="blog.html" class="active">Blog Pet</a>
       <a href="quem-somos.html">Quem Somos?</a>
+      <a href="contato.html">Contato</a>
     </nav>
   </header>
 
